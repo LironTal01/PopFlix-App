@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PopiFlix" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/dark_main_color</item>
+        <item name="colorOnPrimary">@color/dark_main_text_color</item>
+        
+        <!-- Set dark backgrounds for dark theme -->
+        <item name="android:windowBackground">@color/dark_background_color</item>
+        <item name="colorSurface">@color/dark_background_color</item>
+        <item name="colorSurfaceVariant">@color/dark_secondary_background</item>
+        <item name="colorOnSurface">@color/dark_text_color</item>
+        <item name="colorOnSurfaceVariant">@color/dark_secondary_text_color</item>
+        
+        <!-- Ensure proper text colors for dark theme -->
+        <item name="android:textColorPrimary">@color/dark_text_color</item>
+        <item name="android:textColorSecondary">@color/dark_secondary_text_color</item>
+        
+            <!-- Status bar and navigation bar colors for dark theme -->
+    <item name="android:statusBarColor">@color/dark_background_color</item>
+    <item name="android:navigationBarColor">@color/dark_background_color</item>
+    <item name="android:windowLightStatusBar">false</item>
+    <item name="android:windowLightNavigationBar">false</item>
+</style>
+
+<!-- Style to remove ripple effect from navigation items -->
+<style name="NoRippleStyle" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+    <item name="android:color">@android:color/transparent</item>
+    <item name="android:width">0dp</item>
+    <item name="android:height">0dp</item>
+</style>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Navigation graph for app flow -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- Home screen -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.popiflix.ui.home.HomeFragment"
+        android:label="@string/tab_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_movieDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <!-- Search -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.popiflix.ui.search.SearchFragment"
+        android:label="@string/tab_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_movieDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <!-- Favorites -->
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.popiflix.ui.favorites.FavoritesFragment"
+        android:label="@string/tab_favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_favorites_to_movieDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <!-- Watchlist -->
+    <fragment
+        android:id="@+id/watchlistFragment"
+        android:name="com.example.popiflix.ui.watchlist.WatchlistFragment"
+        android:label="@string/tab_watchlist"
+        tools:layout="@layout/fragment_watchlist">
+        <action
+            android:id="@+id/action_watchlist_to_movieDetail"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <!-- Settings (אין מעבר מובנה לפרטים, אבל אפשר להוסיף אם צריך) -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.popiflix.ui.settings.SettingsFragment"
+        android:label="@string/tab_settings" />
+
+    <!-- Movie Detail -->
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.popiflix.ui.detail.MovieDetailFragment"
+        android:label="@string/movie_details"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hebrew strings file for localization -->
+<resources>
+    <!-- App Name -->
+    <string name="app_name">PopFlix</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_home">בית</string>
+    <string name="tab_search">חיפוש</string>
+    <string name="tab_favorites">מועדפים</string>
+    <string name="tab_watchlist">רשימת צפייה</string>
+    <string name="tab_settings">הגדרות</string>
+
+    <!-- General UI strings -->
+    <string name="movie_details">פרטי הסרט</string>
+    <string name="loading">טוען...</string>
+    <string name="error_occurred">אירעה שגיאה</string>
+    <string name="no_internet_connection">אין חיבור לאינטרנט</string>
+    <string name="retry">נסה שוב</string>
+    <string name="ok">אישור</string>
+    <string name="cancel">ביטול</string>
+    <string name="save">שמור</string>
+    <string name="delete">מחק</string>
+    <string name="edit">ערוך</string>
+    <string name="add">הוסף</string>
+
+    <!-- Home Fragment -->
+    <string name="popular_movies">פופולריים בעולם</string>
+    <string name="top_rated_movies">סרטים מדורגים</string>
+    <string name="upcoming_movies">בקרוב בקולנוע</string>
+    <string name="now_playing_movies">מוקרן כעת</string>
+    <string name="see_all">צפה בהכל</string>
+    
+    <!-- Genre Categories -->
+    <string name="action_adventure">אקשן והרפתקאות</string>
+    <string name="comedy">קומדיה</string>
+    <string name="drama">דרמה</string>
+    <string name="romance">רומנטיקה</string>
+    <string name="animation">אנימציה</string>
+    <string name="science_fiction">מדע בדיוני</string>
+    <string name="horror">אימה</string>
+    <string name="thriller">מתח</string>
+    <string name="documentary">דוקומנטרי</string>
+
+    <!-- Search Fragment -->
+    <string name="search_movies">חפש סרטים</string>
+    <string name="search_hint">הזן שם סרט...</string>
+    <string name="search_hint_enhanced">חפש לפי שם סרט, שחקן או במאי</string>
+    <string name="no_results_found">לא נמצאו תוצאות</string>
+    <string name="search_history">היסטוריית חיפוש</string>
+    <string name="clear_search_history">נקה היסטוריית חיפוש</string>
+    <string name="recent_searches">חיפושים אחרונים</string>
+    <string name="popular_worldwide">פופולרי בעולם</string>
+    <string name="search_placeholder">חיפוש...</string>
+    <string name="search_results">תוצאות החיפוש</string>
+    <string name="search_info_text">חפש לפי שם סרט, שחקן או במאי</string>
+    <string name="popular_searches">חיפושים פופולריים</string>
+    <string name="trending_now">טרנדים עכשיו</string>
+
+    <!-- Favorites Fragment -->
+    <string name="my_favorites">מועדפים</string>
+    <string name="no_favorites">אין סרטים מועדפים עדיין</string>
+    <string name="add_to_favorites">הוסף למועדפים</string>
+    <string name="remove_from_favorites">הסר ממועדפים</string>
+    <string name="remove_from_favorites_short">הסר</string>
+    <string name="favorite_added">נוסף למועדפים</string>
+    <string name="favorite_removed">הוסר ממועדפים</string>
+    <string name="fav_empty_title">אין מועדפים עדיין</string>
+    <string name="fav_empty_desc">הקישו על סרט כדי לצפות בפרטיו ולהוסיף אותו למועדפים.</string>
+    <string name="fav_poster_cd">פוסטר של הסרט</string>
+    <string name="fav_remove_cd">הסרה ממועדפים</string>
+    <string name="favorites_count">%d מועדפים</string>
+    <string name="favorite_count_single">מועדף אחד</string>
+
+
+    <!-- Watchlist Fragment -->
+    <string name="my_watchlist">רשימת צפייה</string>
+    <string name="no_watchlist">אין סרטים ברשימת צפייה</string>
+    <string name="add_to_watchlist">הוסף לרשימת צפייה</string>
+    <string name="remove_from_watchlist">הסר מרשימת צפייה</string>
+    <string name="remove_from_watchlist_short">הסר</string>
+    <string name="watchlist_added">נוסף לרשימת צפייה</string>
+    <string name="add_to_watchlist_dialog_title">הוסף לרשימת צפייה</string>
+    <string name="add_to_watchlist_dialog_message">הוסף תגיות על מתי תרצה לצפות בסרט זה (אופציונלי)</string>
+    <string name="add_to_watchlist_dialog_hint">למשל: סרט לסופ״ש, סרט משפחתי...</string>
+    <string name="add_to_watchlist_dialog_add">הוסף</string>
+    <string name="add_to_watchlist_dialog_cancel">ביטול</string>
+    <string name="watchlist_removed">הוסר מרשימת צפייה</string>
+    <string name="search_by_notes">חיפוש לפי תגיות...</string>
+    <string name="sort">מיון לפי</string>
+    <string name="sort_by_date_added">תאריך הוספה</string>
+    <string name="sort_by_alphabetical">א״ב</string>
+    <string name="sort_by_release_date">תאריך יציאה</string>
+    <string name="sort_by_rating">דירוג</string>
+    <string name="sorted_by_date_added">תאריך הוספה</string>
+    <string name="sorted_by_alphabetical">א״ב</string>
+    <string name="sorted_by_release_date">תאריך יציאה</string>
+    <string name="sorted_by_rating">דירוג</string>
+    <string name="edit_tags">ערוך תגיות</string>
+    <string name="edit_tags_dialog_title">ערוך תגיות</string>
+    <string name="edit_tags_dialog_message">עדכן את התגיות לסרט זה</string>
+    <string name="removed_from_watchlist">הוסר מרשימת צפייה</string>
+    <string name="removed_from_favorites">הוסר מהמועדפים</string>
+    <string name="undo">בטל</string>
+    <string name="watch_empty_title">אין רשימת צפייה עדיין</string>
+    <string name="watch_empty_desc">הקישו על סרט כדי לצפות בפרטיו ולהוסיף אותו לרשימת צפייה.</string>
+    <string name="watch_poster_cd">פוסטר של הסרט</string>
+
+    <!-- Movie Details -->
+    <string name="overview">תקציר</string>
+    <string name="cast">שחקנים</string>
+    <string name="crew">צוות</string>
+    <string name="release_date">תאריך יציאה</string>
+    <string name="runtime">משך זמן</string>
+    <string name="rating">דירוג</string>
+    <string name="genres">זאנרים</string>
+    <string name="no_genres_available">אין זאנרים זמינים</string>
+    <string name="starring">בהשתתפות</string>
+    <string name="director">במאי/ית</string>
+    <string name="no_cast_available">אין מידע על השחקנים</string>
+    <string name="no_director_available">אין מידע על הבמאי/ית</string>
+    <string name="producer">מפיק</string>
+    <string name="minutes">דק</string>
+    <string name="minutes_short">%d דק</string>
+    <string name="na">לא זמין</string>
+    <string name="rating_out_of_ten">%.1f/10</string>
+    <string name="no_overview">אין תקציר זמין</string>
+    <string name="watchlist_coming_soon">פונקציונליות רשימת הצפייה בקרוב!</string>
+    <string name="share_movie">שתף סרט</string>
+    <string name="share_movie_intro">היי! אני רוצה לשתף איתך סרט טוב שראיתי: %s</string>
+    
+    <!-- Movie Detail Placeholders -->
+    <string name="movie_title_placeholder">שם הסרט</string>
+    <string name="movie_meta_placeholder">2025 • במאי: פלוני • 120 דקות</string>
+    <string name="movie_rating_placeholder">⭐ 8.5/10</string>
+    <string name="movie_genres_placeholder">רומנטיקה | קומדיה</string>
+    <string name="movie_overview_placeholder">תקציר הסרט מופיע כאן</string>
+    <string name="movie_cast_placeholder">בהשתתפות: טום הנקס</string>
+    <string name="movie_director_placeholder">במאי: כריסטופר נולאן</string>
+
+    <!-- Settings Fragment -->
+    <string name="settings">הגדרות</string>
+    <string name="language">שפה</string>
+    <string name="language_auto">אוטומטי (שפת המכשיר)</string>
+    <string name="language_english">English</string>
+    <string name="language_hebrew">עברית</string>
+    <string name="theme">עיצוב</string>
+    <string name="notifications">התראות</string>
+    <string name="cache_settings">הגדרות מטמון</string>
+    <string name="clear_cache">נקה מטמון</string>
+    <string name="settings_saved">ההגדרות נשמרו בהצלחה</string>
+
+    <string name="privacy_policy">מדיניות פרטיות</string>
+    <string name="terms_of_service">תנאי שימוש</string>
+
+    <!-- Theme Options -->
+    <string name="theme_light">בהיר</string>
+    <string name="theme_dark">כהה</string>
+    <string name="theme_system">ברירת מחדל של המערכת</string>
+
+    <!-- Error Messages -->
+    <string name="error_loading">שגיאה בטעינה</string>
+    <string name="language_changed_message">השפה השתנתה!</string>
+    <string name="error_network">שגיאת רשת. אנא בדוק את החיבור שלך.</string>
+    <string name="error_server">שגיאת שרת. אנא נסה שוב מאוחר יותר.</string>
+    <string name="error_unknown">אירעה שגיאה לא ידועה.</string>
+    <string name="error_no_data">אין מידע זמין.</string>
+
+    <!-- Content Descriptions -->
+    <string name="movie_poster">פוסטר הסרט</string>
+    <string name="actor_photo">תמונת השחקן</string>
+    <string name="favorite_icon">אייקון מועדפים</string>
+    <string name="watchlist_icon">אייקון רשימת צפייה</string>
+    <string name="share_icon">אייקון שיתוף</string>
+
+    <!-- Permissions -->
+    <string name="permission_required">נדרשת הרשאה</string>
+    <string name="permission_denied">הרשאה נדחתה</string>
+    <string name="permission_storage_rationale">נדרשת הרשאת אחסון כדי לשמור תמונות סרטים.</string>
+
+    <!-- Cache and Storage -->
+    <string name="cache_cleared">המטמון נוקה בהצלחה</string>
+    <string name="cache_size">גודל מטמון</string>
+    <string name="storage_permission_required">נדרשת הרשאת אחסון</string>
+    
+    <!-- Error Messages for API -->
+    <string name="error_failed_load_popular">נכשל בטעינת סרטים פופולריים</string>
+    <string name="error_failed_load_details">נכשל בטעינת פרטי הסרט</string>
+    <string name="error_failed_load_genres">נכשל בטעינת ז\'אנרים</string>
+    <string name="error_failed_load_credits">נכשל בטעינת קרדיטים</string>
+    <string name="error_failed_search_movies">נכשל בחיפוש סרטים</string>
+    
+    <!-- Job Titles -->
+    <string name="job_director">במאי</string>
+    
+    <!-- Sort Types -->
+    <string name="sort_date_added">date_added</string>
+    <string name="sort_alphabetical">alphabetical</string>
+    <string name="sort_release_date">release_date</string>
+    <string name="sort_rating">rating</string>
+    
+    <!-- Image URLs -->
+    <string name="tmdb_image_base_url">https://image.tmdb.org/t/p/</string>
+    <string name="tmdb_image_size_w500">w500</string>
+    <string name="tmdb_image_size_w342">w342</string>
+    
+    <!-- Share Content -->
+    <string name="share_app_signature">נשלח מהאפליקציה PopFlix</string>
+    <string name="share_movie_emoji">🎬</string>
+    <string name="share_overview_emoji">📝</string>
+    <string name="share_date_emoji">📅</string>
+    <string name="share_rating_emoji">⭐</string>
+    <string name="share_content_type">text/plain</string>
+    
+    <!-- Color Codes -->
+    <string name="color_red">#F44336</string>
+    <string name="color_pink">#E91E63</string>
+    <string name="color_blue">#2196F3</string>
+    <string name="color_gold">#FFD700</string>
+    
+    <!-- Sort Values -->
+    <string name="sort_vote_average_desc">vote_average.desc</string>
+    <string name="min_votes">20</string>
+    
+    <!-- Rating -->
+    <string name="rate_movie">דרג סרט</string>
+    <string name="your_rating">הדירוג שלך</string>
+    <string name="rate_movie_dialog_title">דרג את הסרט %s</string>
+    <string name="rate_movie_dialog_message">גרור את הכוכב כדי לקבוע את הדירוג שלך</string>
+    <string name="rate_movie_dialog_rate">דרג</string>
+    <string name="rate_movie_dialog_cancel">ביטול</string>
+    <string name="rate_movie_dialog_remove">הסר דירוג</string>
+    <string name="rating_saved">דירוג נשמר: %s ⭐</string>
+    <string name="rating_removed">הדירוג הוסר בהצלחה!</string>
+    <string name="rating_error">שגיאה בדירוג: %s</string>
+    <string name="trending_movies">סרטים פופולריים</string>
+    <string name="top_10_israeli_movies">הכי פופולריים בישראל</string>
+    <string name="most_popular_in_israel">הנצפים ביותר בישראל</string>
+    <string name="new_in_cinemas">החדשים בקולנוע</string>
+    <string name="more_info">מידע נוסף</string>
+</resources>

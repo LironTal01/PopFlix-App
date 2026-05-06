@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:background="@android:color/transparent">
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="@android:color/transparent">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="-2.5dp"
+            android:text="PopFlix"
+            android:textColor="#E50914"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/sweet_candy_regular"
+            android:letterSpacing="0.02"
+            android:shadowColor="#CC000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="6" />
+
+    </LinearLayout>
+
+</FrameLayout>

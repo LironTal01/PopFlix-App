@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme colors -->
+    <color name="dark_main_color">#FFFFFF</color>
+    <color name="dark_main_text_color">#FFFFFF</color>
+    <color name="dark_background_color">#1C1B1F</color>
+    <color name="dark_secondary_background">#49454F</color>
+    <color name="dark_text_color">#FFFFFF</color>
+    <color name="dark_secondary_text_color">#CAC4D0</color>
+    
+    <!-- Button text color for dark theme (black text on light button background) -->
+    <color name="sort_button_text_color">#000000</color>
+    
+    <!-- Navigation colors -->
+    <color name="nav_icon_tint">@color/nav_icon_selector</color>
+    <color name="nav_text_tint">@color/nav_text_selector</color>
+</resources>
