@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Style for smaller bottom navigation in landscape -->
+    <style name="LandscapeBottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:layout_height">56dp</item>
+        <item name="itemIconSize">20dp</item>
+        <item name="itemTextAppearanceActive">@style/LandscapeBottomNavTextActive</item>
+        <item name="itemTextAppearanceInactive">@style/LandscapeBottomNavTextInactive</item>
+    </style>
+    
+    <!-- Active text style for landscape bottom nav -->
+    <style name="LandscapeBottomNavTextActive" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+    </style>
+    
+    <!-- Inactive text style for landscape bottom nav -->
+    <style name="LandscapeBottomNavTextInactive" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>

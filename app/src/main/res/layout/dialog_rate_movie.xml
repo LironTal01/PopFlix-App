@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Instructions -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/rate_movie_dialog_message"
+        android:textSize="14sp"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp" />
+
+    <!-- Rating SeekBar -->
+    <SeekBar
+        android:id="@+id/ratingSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:max="20"
+        android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/star_thumb_with_icon" />
+
+    <!-- Rating Value Text -->
+    <TextView
+        android:id="@+id/textRatingValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="0/10"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
+
+    <!-- Fixed Top App Bar -->
+    <include
+        android:id="@+id/topAppBar"
+        layout="@layout/top_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingTop="80dp"
+        android:paddingBottom="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+                    <!-- Hero Section - Movie Carousel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/heroRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:nestedScrollingEnabled="false" />
+
+                <!-- Page indicators -->
+                <LinearLayout
+                    android:id="@+id/pageIndicators"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+                              <!-- Movie Categories Section -->
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:paddingHorizontal="16dp">
+
+                          <!-- New in Cinemas -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/new_in_cinemas"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/newMoviesRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Popular Movies -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/popular_movies"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/popularMoviesRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Upcoming Movies -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/upcoming_movies"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/upcomingMoviesRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Action & Adventure -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/action_adventure"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/actionAdventureRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Comedy -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/comedy"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/comedyRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Drama -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/drama"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/dramaRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Romance -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/romance"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/romanceRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Animation -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/animation"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/animationRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Science Fiction -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/science_fiction"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/scienceFictionRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Horror -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/horror"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/horrorRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Thriller -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/thriller"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/thrillerRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+                          <!-- Documentary -->
+                          <LinearLayout
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_marginBottom="24dp">
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/documentary"
+                                  android:textSize="18sp"
+                                  android:textStyle="bold"
+                                  android:textColor="?attr/colorOnSurface"
+                                  android:layout_marginBottom="12dp" />
+
+                              <androidx.recyclerview.widget.RecyclerView
+                                  android:id="@+id/documentaryRecycler"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content"
+                                  android:nestedScrollingEnabled="false" />
+
+                          </LinearLayout>
+
+
+                      </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="visible"
+        android:indeterminateTint="?attr/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_loading"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+</FrameLayout>

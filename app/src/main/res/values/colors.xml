@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Color definitions for light theme -->
+<resources>
+    <!-- Light theme colors -->
+    <color name="light_main_color">#000000</color>
+    <color name="light_main_text_color">#FFFFFF</color>
+    <color name="light_background_color">#FFFFFF</color>
+    <color name="light_secondary_background">#F2F0F4</color>
+    <color name="light_text_color">#1C1B1F</color>
+    <color name="light_secondary_text_color">#49454F</color>
+    
+    <!-- Dark theme colors (default values) -->
+    <color name="dark_main_color">#1976D2</color>
+    <color name="dark_main_text_color">#FFFFFF</color>
+    <color name="dark_background_color">#1C1B1F</color>
+    <color name="dark_secondary_background">#49454F</color>
+    <color name="dark_text_color">#E6E1E5</color>
+    <color name="dark_secondary_text_color">#CAC4D0</color>
+    
+    <!-- Sort button text color -->
+    <color name="sort_button_text_color">#FFFFFF</color>
+    
+    <!-- Navigation colors -->
+    <color name="nav_icon_tint">@color/nav_icon_selector</color>
+    <color name="nav_text_tint">@color/nav_text_selector</color>
+</resources>

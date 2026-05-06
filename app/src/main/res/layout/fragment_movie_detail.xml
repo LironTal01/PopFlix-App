@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar with back option -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:background="?attr/colorSurface"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    <!-- movie content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="36dp"
+        android:background="?attr/colorSurface"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Movie Poster Image -->
+            <ImageView
+                android:id="@+id/imagePoster"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerInside"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/movie_poster" />
+
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_title_placeholder"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:textAlignment="viewStart"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp" />
+
+            <!-- Movie Meta Information -->
+            <TextView
+                android:id="@+id/textMeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_meta_placeholder"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="4dp"
+                android:layout_marginHorizontal="16dp" />
+
+            <!-- Movie Rating -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textRating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/movie_rating_placeholder"
+                    android:textSize="14sp"
+                    android:textColor="#FFD700" />
+
+                <FrameLayout
+                    android:id="@+id/buttonRateMovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sort_button_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/rate_movie"
+                        android:textColor="@color/sort_button_text_color"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:drawableStart="@drawable/ic_star_small"
+                        android:drawablePadding="4dp" />
+                        
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!-- Movie Genres -->
+            <TextView
+                android:id="@+id/textGenres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_genres_placeholder"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="8dp"
+                android:layout_marginHorizontal="16dp"
+                android:textAlignment="viewStart"
+                android:contentDescription="@string/genres" />
+
+            <!-- Movie Overview -->
+            <TextView
+                android:id="@+id/textOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_overview_placeholder"
+                android:textSize="14sp"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Movie Cast -->
+            <TextView
+                android:id="@+id/textCast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_cast_placeholder"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:textAlignment="viewStart"
+                android:contentDescription="@string/starring" />
+
+            <!-- Movie Director -->
+            <TextView
+                android:id="@+id/textDirector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/movie_director_placeholder"
+                android:textSize="12sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:layout_marginTop="4dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="viewStart"
+                android:contentDescription="@string/director" />
+
+
+            <!-- Buttons: Favorites & Watchlist -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <!-- Add to Favorites Button -->
+                <Button
+                    android:id="@+id/buttonAddToFavorites"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:text="@string/add_to_favorites"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_favorite"
+                    android:drawablePadding="2dp"
+                    android:stateListAnimator="@null"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+                <!-- Add to Watchlist Button -->
+                <Button
+                    android:id="@+id/buttonAddToWatchlist"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="60dp"
+                    android:text="@string/add_to_watchlist"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_watchlist"
+                    android:drawablePadding="2dp"
+                    android:stateListAnimator="@null"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+
+            <!-- Extra bottom spacing -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

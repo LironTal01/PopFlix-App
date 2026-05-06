@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Main strings file for English language -->
+<resources>
+    <!-- App Name -->
+    <string name="app_name">PopFlix</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_home">Home</string>
+    <string name="tab_search">Search</string>
+    <string name="tab_favorites">Favorites</string>
+    <string name="tab_watchlist">Watchlist</string>
+    <string name="tab_settings">Settings</string>
+
+    <!-- General UI strings -->
+    <string name="movie_details">Movie Details</string>
+    <string name="loading">Loading...</string>
+    <string name="error_occurred">An error occurred</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="retry">Retry</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+
+    <!-- Home Fragment strings -->
+    <string name="popular_movies">Popular Worldwide</string>
+    <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="upcoming_movies">Upcoming Movies</string>
+    <string name="now_playing_movies">Now Playing</string>
+    <string name="see_all">See All</string>
+    
+    <!-- Genre Categories -->
+    <string name="action_adventure">Action &amp; Adventure</string>
+    <string name="comedy">Comedy</string>
+    <string name="drama">Drama</string>
+    <string name="romance">Romance</string>
+    <string name="animation">Animation</string>
+    <string name="science_fiction">Science Fiction</string>
+    <string name="horror">Horror</string>
+    <string name="thriller">Thriller</string>
+    <string name="documentary">Documentary</string>
+
+    <!-- Search Fragment -->
+    <string name="search_movies">Search Movies</string>
+    <string name="search_hint">Movies and more</string>
+    <string name="search_hint_enhanced">Search by movie title, actor, or director</string>
+    <string name="no_results_found">No results found</string>
+    <string name="search_history">Search History</string>
+    <string name="clear_search_history">Clear Search History</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="popular_worldwide">Popular Worldwide</string>
+    <string name="search_placeholder">Search...</string>
+    <string name="search_results">Search Results</string>
+    <string name="search_info_text">Search by movie title, actor, or director</string>
+    <string name="popular_searches">Popular Searches</string>
+    <string name="trending_now">Trending Now</string>
+
+    <!-- Favorites Fragment -->
+    <string name="my_favorites">Favorites</string>
+    <string name="no_favorites">No favorite movies yet</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="remove_from_favorites_short">Remove</string>
+    <string name="favorite_added">Added to favorites</string>
+    <string name="favorite_removed">Removed from favorites</string>
+    <string name="fav_empty_title">No favorites yet</string>
+    <string name="fav_empty_desc">Tap on a movie to view its details and add it to favorites.</string>
+    <string name="fav_poster_cd">Movie poster</string>
+    <string name="fav_remove_cd">Remove from favorites</string>
+    <string name="favorites_count">%d favorites</string>
+    <string name="favorite_count_single">1 favorite</string>
+
+    <!-- Watchlist Fragment -->
+    <string name="my_watchlist">Watchlist</string>
+    <string name="no_watchlist">No movies in watchlist</string>
+    <string name="add_to_watchlist">Add to watchlist</string>
+    <string name="remove_from_watchlist">Remove from watchlist</string>
+    <string name="remove_from_watchlist_short">Remove</string>
+    <string name="watchlist_added">Added to watchlist</string>
+    <string name="add_to_watchlist_dialog_title">Add to Watchlist</string>
+    <string name="add_to_watchlist_dialog_message">Add tags about when you want to watch this movie (optional)</string>
+    <string name="add_to_watchlist_dialog_hint">e.g : Weekend movie, Family movie...</string>
+    <string name="add_to_watchlist_dialog_add">Add</string>
+    <string name="add_to_watchlist_dialog_cancel">Cancel</string>
+    <string name="watch_empty_title">No watchlist yet</string>
+    <string name="watch_empty_desc">Tap on a movie to view its details and add it to watch list.</string>
+    <string name="watch_poster_cd">Movie poster</string>
+    <string name="watchlist_removed">Removed from watchlist</string>
+    <string name="search_by_notes">Search by tags...</string>
+    <string name="sort">Sort by</string>
+    <string name="sort_by_date_added">Date added</string>
+    <string name="sort_by_alphabetical">Alphabetical</string>
+    <string name="sort_by_release_date">Release date</string>
+    <string name="sort_by_rating">Rating</string>
+    <string name="sorted_by_date_added">Date added</string>
+    <string name="sorted_by_alphabetical">Alphabetical</string>
+    <string name="sorted_by_release_date">Release date</string>
+    <string name="sorted_by_rating">Rating</string>
+    <string name="edit_tags">Edit tags</string>
+    <string name="edit_tags_dialog_title">Edit tags</string>
+    <string name="edit_tags_dialog_message">Update the tags for this movie</string>
+    <string name="removed_from_watchlist">removed from watchlist</string>
+    <string name="removed_from_favorites">removed from favorites</string>
+    <string name="undo">UNDO</string>
+
+    <!-- Movie Details -->
+    <string name="overview">Overview</string>
+    <string name="cast">Cast</string>
+    <string name="crew">Crew</string>
+    <string name="release_date">Release Date</string>
+    <string name="runtime">Runtime</string>
+    <string name="rating">Rating</string>
+    <string name="genres">Genres</string>
+    <string name="no_genres_available">No genres available</string>
+    <string name="starring">Starring</string>
+    <string name="director">Director</string>
+    <string name="no_cast_available">No cast information available</string>
+    <string name="no_director_available">No director information available</string>
+    <string name="producer">Producer</string>
+    <string name="minutes">min</string>
+    <string name="minutes_short">%d min</string>
+    <string name="na">N/A</string>
+    <string name="rating_out_of_ten">%.1f/10</string>
+    <string name="no_overview">No overview available</string>
+    <string name="watchlist_coming_soon">Watchlist functionality coming soon!</string>
+    <string name="share_movie">Share Movie</string>
+    <string name="share_movie_intro">Hey! I want to share a great movie I watched: %s</string>
+    
+    <!-- Movie Detail Placeholders -->
+    <string name="movie_title_placeholder">Movie Title</string>
+    <string name="movie_meta_placeholder">2025 • Director: John Doe • 120 min</string>
+    <string name="movie_rating_placeholder">⭐ 8.5/10</string>
+    <string name="movie_genres_placeholder">Romance | Comedy | Romantic Comedy</string>
+    <string name="movie_overview_placeholder">Movie overview appears here. Plot, main actors and everything you need to know.</string>
+    <string name="movie_cast_placeholder">Starring: Tom Hanks, Emma Watson, John Smith</string>
+    <string name="movie_director_placeholder">Director: Christopher Nolan</string>
+
+    
+    <!-- Error Messages -->
+    <string name="error_loading">Error loading</string>
+    <string name="language_changed_message">Language changed! Restarting app to apply changes.</string>
+    
+    <!-- Settings Fragment -->
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="language_auto">Auto (Device Language)</string>
+    <string name="language_english">English</string>
+    <string name="language_hebrew">עברית</string>
+    <string name="theme">Theme</string>
+    <string name="notifications">Notifications</string>
+    <string name="cache_settings">Cache Settings</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="settings_saved">Settings saved successfully</string>
+
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+
+    <!-- Theme Options -->
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System Default</string>
+
+    <!-- Error Messages -->
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_server">Server error. Please try again later.</string>
+    <string name="error_unknown">Unknown error occurred.</string>
+    <string name="error_no_data">No data available.</string>
+
+    <!-- Content Descriptions -->
+    <string name="movie_poster">Movie poster</string>
+    <string name="actor_photo">Actor photo</string>
+    <string name="favorite_icon">Favorite icon</string>
+    <string name="watchlist_icon">Watchlist icon</string>
+    <string name="share_icon">Share icon</string>
+
+    <!-- Permissions -->
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="permission_storage_rationale">Storage permission is needed to save movie images.</string>
+
+    <!-- Cache and Storage -->
+    <string name="cache_cleared">Cache cleared successfully</string>
+    <string name="cache_size">Cache Size</string>
+    <string name="storage_permission_required">Storage permission required</string>
+    <!-- Error Messages for API -->
+    <string name="error_failed_load_popular">Failed to load popular movies</string>
+    <string name="error_failed_load_details">Failed to load movie details</string>
+    <string name="error_failed_load_genres">Failed to load genres</string>
+    <string name="error_failed_load_credits">Failed to load movie credits</string>
+    <string name="error_failed_search_movies">Failed to search movies</string>
+    
+    <!-- Job Titles -->
+    <string name="job_director">Director</string>
+    
+    <!-- Sort Types -->
+    <string name="sort_date_added">date_added</string>
+    <string name="sort_alphabetical">alphabetical</string>
+    <string name="sort_release_date">release_date</string>
+    <string name="sort_rating">rating</string>
+    
+    <!-- Image URLs -->
+    <string name="tmdb_image_base_url">https://image.tmdb.org/t/p/</string>
+    <string name="tmdb_image_size_w500">w500</string>
+    <string name="tmdb_image_size_w342">w342</string>
+    
+    <!-- Share Content -->
+    <string name="share_app_signature">Shared from PopFlix App</string>
+    <string name="share_movie_emoji">🎬</string>
+    <string name="share_overview_emoji">📝</string>
+    <string name="share_date_emoji">📅</string>
+    <string name="share_rating_emoji">⭐</string>
+    <string name="share_content_type">text/plain</string>
+    
+    <!-- Color Codes -->
+    <string name="color_red">#F44336</string>
+    <string name="color_pink">#E91E63</string>
+    <string name="color_blue">#2196F3</string>
+    <string name="color_gold">#FFD700</string>
+    
+    <!-- Sort Values -->
+    <string name="sort_vote_average_desc">vote_average.desc</string>
+    <string name="min_votes">20</string>
+    
+    <!-- Rating -->
+    <string name="rate_movie">Rate Movie</string>
+    <string name="your_rating">Your Rating</string>
+    <string name="rate_movie_dialog_title">Rate the movie %s</string>
+    <string name="rate_movie_dialog_message">Drag the star to set your rating</string>
+    <string name="rate_movie_dialog_rate">Rate</string>
+    <string name="rate_movie_dialog_cancel">Cancel</string>
+    <string name="rate_movie_dialog_remove">Remove Rating</string>
+    <string name="rating_saved">Rating saved: %s ⭐</string>
+    <string name="rating_removed">Rating removed successfully!</string>
+    <string name="rating_error">Rating error: %s</string>
+    <string name="trending_movies">Trending Movies</string>
+    <string name="top_10_israeli_movies">Most Popular in Israel</string>
+    <string name="most_popular_in_israel">Most Popular in Israel</string>
+    <string name="new_in_cinemas">New in Cinemas</string>
+    <string name="more_info">More Info</string>
+
+</resources>
