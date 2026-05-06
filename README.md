@@ -1,120 +1,160 @@
-# PopFlix
+<div align="center">
 
-PopFlix is an Android movie discovery app built with **Kotlin** and the **TMDB API**. It helps users discover movies, search with history, save favorites, manage a personal watchlist, rate movies, and use the app in both **English** and **Hebrew**.
+# 🎬 PopFlix
 
-## Project Overview
+### Android Movie Discovery App
 
-This project was developed as a final Android course project and demonstrates modern Android development practices, including **MVVM architecture**, **Repository pattern**, **Room database**, **Retrofit**, **Hilt**, **Coroutines**, and **WorkManager**.
+An Android application for discovering movies, browsing curated content, managing favorites and watchlists, and exploring movie details with a clean and modern user experience.
 
-## Key Features
+<p>
+  <img src="https://img.shields.io/badge/Platform-Android-green" alt="Android"/>
+  <img src="https://img.shields.io/badge/Language-Kotlin-purple" alt="Kotlin"/>
+  <img src="https://img.shields.io/badge/Architecture-MVVM-blue" alt="MVVM"/>
+  <img src="https://img.shields.io/badge/API-TMDB-orange" alt="TMDB"/>
+  <img src="https://img.shields.io/badge/Database-Room-red" alt="Room"/>
+</p>
 
-- Browse **popular**, **new**, and **upcoming** movies
+</div>
+
+---
+
+## Overview
+
+**PopFlix** is a movie discovery Android app built with **Kotlin** and powered by the **TMDB API**.  
+It allows users to explore popular and upcoming movies, search titles with history support, manage favorites and watchlists, rate movies, and enjoy a localized experience in both **English** and **Hebrew**.
+
+The project was developed as a final Android course project and demonstrates modern Android development practices with a clean architecture and a user-friendly interface.
+
+---
+
+## Features
+
+- Discover **popular**, **new**, and **upcoming** movies
 - Search for movies with **search history**
 - View detailed movie information
 - Save movies to **Favorites**
 - Manage a personal **Watchlist**
-- Store local data with **Room Database**
-- Support **Dark / Light mode**
-- Support **English / Hebrew** and RTL layout for Hebrew
-- Rate movies through the app
-- Background data refresh with **WorkManager**
+- Store data locally using **Room Database**
+- Rate movies directly in the app
+- Switch between **Light Mode** and **Dark Mode**
+- Support **English / Hebrew** with **RTL support**
+- Refresh selected content in the background using **WorkManager**
+
+---
 
 ## Tech Stack
 
-- **Language:** Kotlin
-- **Architecture:** MVVM, Repository Pattern
-- **UI:** Android Fragments, RecyclerView, Material Design
-- **Networking:** Retrofit, Gson, OkHttp
-- **Dependency Injection:** Hilt
-- **Local Storage:** Room Database
-- **Async Programming:** Coroutines
-- **Background Tasks:** WorkManager
-- **Image Loading:** Glide
-- **Navigation:** Navigation Component
-- **API:** TMDB API
+### Core Technologies
+- **Kotlin**
+- **Android SDK**
+- **MVVM Architecture**
+- **Repository Pattern**
 
-## App Screens
+### Libraries & Tools
+- **Retrofit** – API communication
+- **Gson** – JSON parsing
+- **OkHttp** – Networking
+- **Hilt** – Dependency Injection
+- **Room** – Local database
+- **Coroutines** – Asynchronous programming
+- **Glide** – Image loading
+- **Navigation Component** – Fragment navigation
+- **Material Design Components** – UI styling
+- **WorkManager** – Background tasks
 
-### Home Screen
-The home screen presents featured and categorized movie content in a clean, modern layout.
-
-![Home Screen](home-screen.jpg)
-
-### Search
-Users can search for movies and benefit from recent search history for a smoother experience.
-
-![Search Screen](search-screen.jpg)
-
-### Favorites
-Users can keep track of movies they want quick access to in a dedicated favorites screen.
-
-![Favorites Screen](favorites-screen.jpg)
-
-### Movie Details
-Each movie includes a dedicated details screen with core information and user actions.
-
-![Movie Details Screen](movie-details-screen.jpg)
-
-### Watchlist
-The watchlist helps users organize movies they plan to watch.
-
-![Watchlist Screen](watchlist-screen.jpg)
-
-### Settings
-The settings screen supports theme and language preferences.
-
-![Settings Screen](settings-screen.jpg)
+---
 
 ## Architecture
 
-PopFlix follows the **MVVM** pattern:
+PopFlix follows the **MVVM** architectural pattern:
 
-- **UI Layer:** Fragments and adapters
-- **ViewModel Layer:** Manages UI state and screen logic
-- **Repository Layer:** Connects the UI to remote and local data sources
-- **Remote Data Source:** TMDB API via Retrofit
-- **Local Data Source:** Room database for favorites, watchlist, and search history
+- **UI Layer** – Fragments, adapters, and UI components
+- **ViewModel Layer** – Handles UI logic and state management
+- **Repository Layer** – Connects the UI to local and remote data sources
+- **Remote Data Source** – TMDB API via Retrofit
+- **Local Data Source** – Room Database for favorites, watchlist, and search history
 
-### Main Flow
-`UI -> ViewModel -> Repository -> API / Database`
+### Data Flow
+`UI → ViewModel → Repository → API / Database`
 
-## Data Layer
+---
 
-The project uses Room to manage local persistence for:
+## App Screens
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Home Screen</strong><br/><br/>
+      <img src="popflix_readme/home-screen.jpg" alt="Home Screen" width="230"/>
+    </td>
+    <td align="center">
+      <strong>Search</strong><br/><br/>
+      <img src="popflix_readme/search-screen.jpg" alt="Search Screen" width="230"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Favorites</strong><br/><br/>
+      <img src="popflix_readme/favorites-screen.jpg" alt="Favorites Screen" width="230"/>
+    </td>
+    <td align="center">
+      <strong>Movie Details</strong><br/><br/>
+      <img src="popflix_readme/movie-details-screen.jpg" alt="Movie Details Screen" width="230"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>Watchlist</strong><br/><br/>
+      <img src="popflix_readme/watchlist-screen.jpg" alt="Watchlist Screen" width="230"/>
+    </td>
+    <td align="center">
+      <strong>Settings</strong><br/><br/>
+      <img src="popflix_readme/settings-screen.jpg" alt="Settings Screen" width="230"/>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
+## Local Data Management
+
+The app uses **Room Database** to store and manage:
 
 - Favorite movies
 - Watchlist movies
 - Search history
-- User-related local preferences and stored movie data
+- User preferences and related local data
 
-## Notable Technical Highlights
+This improves usability and supports a smoother experience with persistent local storage.
 
-- Multi-language support with **dynamic language switching**
-- **RTL support** for Hebrew
-- Local persistence for offline-friendly user data
-- Background refresh for core content using **WorkManager**
-- Reusable adapters and fragment-based navigation
-- Modern Android app structure with clear separation of concerns
+---
 
-## Libraries Used
+## Technical Highlights
 
-- Retrofit
-- Gson
-- OkHttp
-- Material Design Components
-- Navigation Component
-- Glide
-- Hilt
-- Room
-- ViewModel & LiveData
-- Coroutines
-- WorkManager
+- **Multi-language support** with dynamic language switching
+- **RTL layout support** for Hebrew
+- **Room persistence** for local data storage
+- **Reusable adapters** and fragment-based navigation
+- **WorkManager integration** for background refresh
+- Clear separation of concerns using **MVVM + Repository Pattern**
+- Modern Android app structure with scalable components
 
-## Purpose
+---
 
-The goal of PopFlix is to provide a modern, user-friendly platform for discovering, organizing, and tracking movies on Android.
+## Project Goal
+
+The goal of PopFlix is to provide a modern, intuitive, and visually appealing platform for discovering and organizing movies on Android devices.
+
+---
 
 ## Author
 
 **Liron Tal**  
-B.Sc. Computer Science Student, Reichman University
+B.Sc. Computer Science Student  
+Reichman University
+
+---
