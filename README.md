@@ -188,11 +188,11 @@ app/src/main/
 
 `local.properties` is excluded from version control. The build exposes the value through `BuildConfig`; API keys should never be committed to source files.
 
-## Attribution
+## Data source
 
-Movie data and artwork are provided by [TMDB](https://www.themoviedb.org/).
+Movie metadata, posters, and backdrops are sourced from [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB.
 
-## Maintainer
+## Author
 
-**[Liron Tal](https://github.com/LironTal01)**  
-B.Sc. Computer Science candidate at Reichman University
+**Liron Tal**  
+B.Sc. in Computer Science, Reichman University
