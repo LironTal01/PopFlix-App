@@ -45,35 +45,18 @@ The application was built as a final Android development course project, with an
 | Discover | Organize | Personalize |
 | :--- | :--- | :--- |
 | Browse popular, now-playing, top-rated, upcoming, and genre-based collections. | Save favorites and watchlist entries in an on-device Room database. | Switch between light, dark, and system themes. |
-| Search by title or person with 300 ms debounce, pagination, deduplication, and recent-search history. | Add watchlist notes and track priority and watched status. | Use English or Hebrew with dynamic switching and right-to-left layouts. |
+| Search by title or person with 300 ms debounce, pagination, deduplication, and recent-search history. | Add and edit personal watchlist notes, search those notes, and sort the list by date added, title, release date, or rating. | Use English or Hebrew with dynamic switching and right-to-left layouts. |
 | Explore movie details, artwork, genres, cast, and crew. | Rate movies through a TMDB guest session. | Share favorite movie details through the Android share sheet. |
 
-## Screen flow
+## Core user journey
 
-The bottom navigation provides direct access to the five primary destinations. Movie cards from the main content screens open a shared details destination, where users can rate a movie or update their personal collections.
+PopFlix guides users from browsing and search into detailed movie exploration, then lets them rate movies through TMDB or organize selections in favorites and a note-enabled watchlist.
 
-```mermaid
-flowchart TB
-    NAV["MainActivity and bottom navigation"]
-    HOME["Home"]
-    SEARCH["Search"]
-    FAVORITES["Favorites"]
-    WATCHLIST["Watchlist"]
-    SETTINGS["Settings"]
-    DETAILS["Movie details"]
-    ACTIONS["Rate, favorite, or add to watchlist"]
+<div align="center">
 
-    NAV --> HOME
-    NAV --> SEARCH
-    NAV --> FAVORITES
-    NAV --> WATCHLIST
-    NAV --> SETTINGS
-    HOME -->|Select movie| DETAILS
-    SEARCH -->|Select result| DETAILS
-    FAVORITES -->|Open saved movie| DETAILS
-    WATCHLIST -->|Open saved movie| DETAILS
-    DETAILS --> ACTIONS
-```
+<img src="popflix_readme/popflix-user-journey.jpg" alt="PopFlix core user journey from discovery to rating, favorites, and watchlist" width="100%">
+
+</div>
 
 ## Technical architecture
 
