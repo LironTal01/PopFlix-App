@@ -2,36 +2,82 @@
 
 # 🎬 PopFlix
 
-### A native Android app for discovering, organizing, and rating movies
+### Native Android movie discovery, built with Kotlin
 
-Explore TMDB movie collections, search across titles and people, and keep a personal favorites list and watchlist — all in one responsive Kotlin app.
+Discover films, search across titles and people, and organize favorites and watchlists in a bilingual, lifecycle-aware Android application.
 
 <p>
-  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?logo=android&logoColor=white" alt="Android">
-  <img src="https://img.shields.io/badge/Language-Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Android-API%2027%2B-3DDC84?logo=android&logoColor=white" alt="Android API 27+">
+  <img src="https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
   <img src="https://img.shields.io/badge/Architecture-MVVM-0A66C2" alt="MVVM">
-  <img src="https://img.shields.io/badge/Data-TMDB-01B4E4" alt="TMDB">
+  <img src="https://img.shields.io/badge/API-TMDB-01B4E4" alt="TMDB API">
 </p>
 
 </div>
 
 ## Overview
 
-PopFlix is a Kotlin Android application built around the [TMDB API](https://www.themoviedb.org/). It brings movie discovery, combined search, personal lists, guest ratings, and bilingual UI support into a single mobile experience.
+PopFlix is a native Android application that turns the [TMDB API](https://www.themoviedb.org/) into a personal movie-discovery experience. Users can browse curated collections, run combined searches, inspect cast and crew information, maintain local favorites and watchlists, and rate movies through TMDB guest sessions.
 
-Developed as a final project for an Android development course, the app emphasizes a layered architecture, lifecycle-aware UI state, local persistence, and a polished browsing experience.
+The application was built as a final Android development course project, with an emphasis on structured data flow, lifecycle-aware state, local persistence, dependency injection, and responsive multilingual UI.
 
-## Highlights
+## App preview
+
+<div align="center">
+
+<table>
+  <tr>
+    <td align="center"><strong>Home</strong><br><br><img src="popflix_readme/home-screen.jpg" alt="PopFlix home screen" width="210"></td>
+    <td align="center"><strong>Search</strong><br><br><img src="popflix_readme/search-screen.jpg" alt="PopFlix movie search screen" width="210"></td>
+    <td align="center"><strong>Movie details</strong><br><br><img src="popflix_readme/movie-details-screen.jpg" alt="PopFlix movie details screen" width="210"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Favorites</strong><br><br><img src="popflix_readme/favorites-screen.jpg" alt="PopFlix favorites screen" width="210"></td>
+    <td align="center"><strong>Watchlist</strong><br><br><img src="popflix_readme/watchlist-screen.jpg" alt="PopFlix watchlist screen" width="210"></td>
+    <td align="center"><strong>Settings</strong><br><br><img src="popflix_readme/settings-screen.jpg" alt="PopFlix language and theme settings" width="210"></td>
+  </tr>
+</table>
+
+</div>
+
+## Product capabilities
 
 | Discover | Organize | Personalize |
 | :--- | :--- | :--- |
-| Browse popular, now-playing, top-rated, upcoming, and genre-based collections. | Save favorites and watchlist entries locally. | Switch between light, dark, and system themes. |
-| Search by movie title or person, with debounced input and recent-search history. | Add watchlist notes, priority, watched status, and reminders. | Use English or Hebrew, including right-to-left layouts. |
-| Open detailed movie pages with cast, crew, genres, and artwork. | Rate movies through a TMDB guest session. | Share favorite movie details through Android’s share sheet. |
+| Browse popular, now-playing, top-rated, upcoming, and genre-based collections. | Save favorites and watchlist entries in an on-device Room database. | Switch between light, dark, and system themes. |
+| Search by title or person with 300 ms debounce, pagination, deduplication, and recent-search history. | Add watchlist notes and track priority and watched status. | Use English or Hebrew with dynamic switching and right-to-left layouts. |
+| Explore movie details, artwork, genres, cast, and crew. | Rate movies through a TMDB guest session. | Share favorite movie details through the Android share sheet. |
 
-## Architecture
+## Screen flow
 
-The app’s primary data flow separates presentation concerns from remote and local data sources. Hilt wires the dependencies between layers.
+The bottom navigation provides direct access to the five primary destinations. Movie cards from the main content screens open a shared details destination, where users can rate a movie or update their personal collections.
+
+```mermaid
+flowchart TB
+    NAV["MainActivity and bottom navigation"]
+    HOME["Home"]
+    SEARCH["Search"]
+    FAVORITES["Favorites"]
+    WATCHLIST["Watchlist"]
+    SETTINGS["Settings"]
+    DETAILS["Movie details"]
+    ACTIONS["Rate, favorite, or add to watchlist"]
+
+    NAV --> HOME
+    NAV --> SEARCH
+    NAV --> FAVORITES
+    NAV --> WATCHLIST
+    NAV --> SETTINGS
+    HOME -->|Select movie| DETAILS
+    SEARCH -->|Select result| DETAILS
+    FAVORITES -->|Open saved movie| DETAILS
+    WATCHLIST -->|Open saved movie| DETAILS
+    DETAILS --> ACTIONS
+```
+
+## Technical architecture
+
+Most feature flows follow MVVM: fragments forward user events to ViewModels, observe LiveData, and render the resulting state. Repositories coordinate remote requests and on-device persistence, while Hilt supplies their dependencies.
 
 ```mermaid
 flowchart TB
@@ -44,7 +90,7 @@ flowchart TB
     PREFS["SharedPreferences: Theme, language, search history"]
     WORKER["WorkManager: Scheduled TMDB requests"]
 
-    UI <--> |Events and observed UI state| VM
+    UI <-->|Events and observed state| VM
     VM --> MOVIE
     VM --> SAVED
     MOVIE <--> API
@@ -53,21 +99,25 @@ flowchart TB
     WORKER --> MOVIE
 ```
 
-- **Presentation:** fragments render screens; adapters render scrolling collections; ViewModels expose lifecycle-aware state through LiveData and run asynchronous work with coroutines.
-- **Remote data:** MovieRepository wraps typed TMDB requests for discovery, details, credits, search, guest sessions, and ratings.
-- **Local data:** Room stores favorites and watchlist entries; SharedPreferences stores application settings and recent searches.
-- **Background work:** WorkManager schedules periodic TMDB requests subject to network connectivity and battery-not-low constraints.
-- **Dependency injection:** Hilt supplies API, database, repository, and worker dependencies.
+### Engineering highlights
+
+- **Combined search pipeline:** searches movie titles and people, expands person matches through cast and crew discovery, removes duplicate movies, and prioritizes title matches before rating and vote count.
+- **Lifecycle-aware presentation:** ViewModels expose UI state through LiveData; coroutines handle network and database work without blocking the main thread.
+- **Purpose-specific persistence:** Room stores structured favorites and watchlist records, while SharedPreferences stores lightweight settings and the five most recent searches.
+- **Centralized networking:** Hilt provides a singleton Retrofit and OkHttp stack with Gson conversion, language-aware requests, API-key injection from BuildConfig, and debug-only HTTP logging.
+- **Type-safe navigation:** Navigation Component and Safe Args connect the main destinations to a shared movie-details screen.
+- **Constrained background work:** WorkManager schedules periodic TMDB fetches only when a network connection is available and the battery is not low.
 
 ## Technology
 
 | Area | Tools |
 | :--- | :--- |
-| Language & platform | Kotlin, Android SDK, Android 8.1+ (API 27) |
-| Architecture | MVVM, Repository pattern, Hilt, LiveData, Coroutines |
+| Platform | Kotlin, Android SDK, Android 8.1+ (API 27) |
+| Architecture | MVVM, Repository pattern, Hilt, ViewModel, LiveData |
+| Concurrency | Kotlin Coroutines, CoroutineWorker |
 | Networking | TMDB API, Retrofit, OkHttp, Gson |
-| Local storage | Room, SQLite, SharedPreferences |
-| UI | Fragments, RecyclerView, View Binding, Navigation Component, Material Components, Glide |
+| Persistence | Room, SQLite, SharedPreferences |
+| Interface | Fragments, RecyclerView, View Binding, Navigation Component, Safe Args, Material 3, Glide |
 | Background work | WorkManager |
 
 ## Project structure
@@ -75,76 +125,74 @@ flowchart TB
 ```text
 app/src/main/
 ├── java/com/example/popiflix/
-│   ├── PopFlixApp.kt              # Application setup, language loading, work scheduling
+│   ├── PopFlixApp.kt
 │   ├── data/
-│   │   ├── api/                   # TMDB service definitions and Retrofit utilities
-│   │   ├── database/              # Room entities, DAOs, and MovieDatabase
-│   │   ├── di/                    # Hilt network and database modules
-│   │   ├── models/                # API request/response and app data models
-│   │   └── repositories/          # Movie, favorites, watchlist, and search-history access
+│   │   ├── api/
+│   │   │   └── TmdbApi.kt                 # Typed TMDB endpoints
+│   │   ├── database/
+│   │   │   ├── MovieDatabase.kt           # Room database
+│   │   │   ├── FavoriteMovie.kt           # Favorites entity
+│   │   │   ├── FavoriteMovieDao.kt        # Favorites queries
+│   │   │   ├── WatchlistMovie.kt          # Watchlist entity
+│   │   │   └── WatchlistMovieDao.kt       # Watchlist queries
+│   │   ├── di/
+│   │   │   ├── NetworkModule.kt           # Retrofit and OkHttp providers
+│   │   │   └── DatabaseModule.kt          # Room and repository providers
+│   │   ├── models/                        # TMDB responses and domain models
+│   │   └── repositories/
+│   │       ├── MovieRepository.kt         # Discovery, search, details, ratings
+│   │       ├── FavoriteRepository.kt      # Local favorites operations
+│   │       ├── WatchlistRepository.kt     # Local watchlist operations
+│   │       └── SearchHistoryRepository.kt # Recent-search persistence
 │   ├── ui/
-│   │   ├── home/                  # Home feed and movie carousels
-│   │   ├── search/                # Debounced combined search and history
-│   │   ├── detail/                # Movie details, ratings, and list actions
-│   │   ├── favorites/             # Locally saved favorites
-│   │   ├── watchlist/             # Watchlist, notes, status, priority, and filtering
-│   │   ├── settings/              # Theme and language preferences
-│   │   └── MainActivity.kt        # Navigation host and bottom navigation
-│   ├── util/                      # Language and shared application utilities
-│   └── workers/                   # Periodic background TMDB requests
-├── res/
-│   ├── layout/ and layout-land/   # Screen, dialog, and list-item layouts
-│   ├── navigation/                # Navigation graph and Safe Args destinations
-│   ├── values/, values-iw/        # English/Hebrew strings, themes, and styles
-│   └── xml/                       # Locale configuration
-└── assets/                        # Lottie animation assets
+│   │   ├── home/                          # Hero content and movie carousels
+│   │   ├── search/                        # Combined search and pagination
+│   │   ├── detail/                        # Details, rating, and list actions
+│   │   ├── favorites/                     # Saved favorites
+│   │   ├── watchlist/                     # Notes, filtering, and sorting
+│   │   ├── settings/                      # Theme and language controls
+│   │   └── MainActivity.kt                # Navigation host
+│   ├── util/                              # Language and shared utilities
+│   └── workers/                           # Periodic background requests
+└── res/
+    ├── layout/ and layout-land/            # Portrait and landscape layouts
+    ├── navigation/                         # Navigation graph
+    ├── values/, values-night/, values-iw/  # Themes and localized resources
+    └── xml/                                # Supported locale configuration
 ```
 
-## Run locally
+## Run the app
 
-### Prerequisites
+### Requirements
 
 - Android Studio
-- An Android device or emulator running Android 8.1 (API 27) or later
-- A TMDB API key
+- Android device or emulator running Android 8.1 (API 27) or later
+- [TMDB API key](https://developer.themoviedb.org/docs/getting-started)
 
 ### Setup
 
-1. Clone the repository and open it in Android Studio.
-2. Create or update `local.properties` in the project root:
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/LironTal01/PopFlix-App.git
+   ```
+
+2. Open the project in Android Studio.
+3. Add the following entry to the project-level `local.properties` file:
 
    ```properties
    TMDB_API_KEY=your_tmdb_api_key
    ```
 
-3. Sync the Gradle project and run the `app` configuration.
+4. Sync Gradle and run the `app` configuration.
 
-`local.properties` is ignored by Git. The build passes the key to `BuildConfig`, so never place the key in a tracked source file.
-
-## App preview
-
-<div align="center">
-
-<table>
-  <tr>
-    <td align="center"><strong>Home</strong><br><br><img src="popflix_readme/home-screen.jpg" alt="PopFlix home screen" width="210"></td>
-    <td align="center"><strong>Search</strong><br><br><img src="popflix_readme/search-screen.jpg" alt="Movie search screen" width="210"></td>
-    <td align="center"><strong>Movie details</strong><br><br><img src="popflix_readme/movie-details-screen.jpg" alt="Movie details screen" width="210"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Favorites</strong><br><br><img src="popflix_readme/favorites-screen.jpg" alt="Favorites screen" width="210"></td>
-    <td align="center"><strong>Watchlist</strong><br><br><img src="popflix_readme/watchlist-screen.jpg" alt="Watchlist screen" width="210"></td>
-    <td align="center"><strong>Settings</strong><br><br><img src="popflix_readme/settings-screen.jpg" alt="Language and theme settings" width="210"></td>
-  </tr>
-</table>
-
-</div>
+`local.properties` is excluded from version control. The build exposes the value through `BuildConfig`; API keys should never be committed to source files.
 
 ## Attribution
 
 Movie data and artwork are provided by [TMDB](https://www.themoviedb.org/).
 
-## Author
+## Maintainer
 
-Liron Tal  
-B.Sc. Computer Science, Reichman University
+**[Liron Tal](https://github.com/LironTal01)**  
+B.Sc. Computer Science candidate at Reichman University
