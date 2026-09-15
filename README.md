@@ -35,14 +35,14 @@ The app’s primary data flow separates presentation concerns from remote and lo
 
 ```mermaid
 flowchart TB
-    UI["UI layer<br/>Fragments and RecyclerView adapters"]
-    VM["Presentation layer<br/>ViewModels, LiveData, Coroutines"]
+    UI["UI: Fragments and RecyclerView adapters"]
+    VM["Presentation: ViewModels, LiveData, Coroutines"]
     MOVIE["MovieRepository"]
     SAVED["FavoriteRepository and WatchlistRepository"]
-    API["TMDB API<br/>Retrofit, OkHttp, Gson"]
-    DB["Room database<br/>Favorites and watchlist"]
-    PREFS["SharedPreferences<br/>Theme, language, search history"]
-    WORKER["WorkManager<br/>Scheduled background requests"]
+    API["TMDB API: Retrofit, OkHttp, Gson"]
+    DB["Room: Favorites and watchlist"]
+    PREFS["SharedPreferences: Theme, language, search history"]
+    WORKER["WorkManager: Scheduled TMDB requests"]
 
     UI <--> |Events and observed UI state| VM
     VM --> MOVIE
